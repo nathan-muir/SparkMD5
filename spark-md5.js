@@ -699,5 +699,20 @@
         return raw ? hexToBinaryString(ret) : ret;
     };
 
+    /**
+     * Performs the md5 hash on an array buffer.
+     *
+     * @param {ArrayBuffer} arr The array buffer
+     * @param {Boolean}     raw True to get the raw string, false to get the hex one
+     *
+     * @return {String} The result
+     */
+    SparkMD5.ArrayBuffer.hashArray = function (arr, raw) {
+        var hash = md51_array(arr),
+            ret = hex(hash);
+
+        return raw ? hexToBinaryString(ret) : ret;
+    };
+
     return SparkMD5;
 }));
